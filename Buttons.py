@@ -8,13 +8,13 @@ class Button:
         f = pygame.font.Font(None, 20)
         self.text = f.render(text, True, (255, 255, 255))
 
-    def check_click_but(self, cord_mouse_x, cord_mouse_y):
+    def check_click(self, cord_mouse_x, cord_mouse_y):
         if self.x <= cord_mouse_x <= self.x + self.size_x and self.y <= cord_mouse_y <= self.y + self.size_y:
             self.function()
             return True
         return
 
-    def creat_surface_button(self):
+    def creat_surface(self):
         surfce_button = pygame.Surface((self.size_x, self.size_y))
         surfce_button.fill((100, 100, 100))
         place = self.text.get_rect(center=(self.size_x // 2, self.size_y // 2))
